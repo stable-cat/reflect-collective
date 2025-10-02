@@ -1,0 +1,45 @@
+/* ===== About page specific CSS ===== */
+
+/* Top padding to prevent header overlap */
+.about {
+  padding: 150px 20px 50px;  /* enough space for fixed header */
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Center and constrain text content */
+.about-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Heading styling */
+.about-container h2 {
+  font-size: 2.5rem;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+/* Paragraph styling */
+.about-container p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+header{
+    background: #004080;
+}
+
+.mission-list{
+    margin-left: 4rem;
+}
+
+.logo{
+    max-width: 11.5rem;
+    height: auto;
+}

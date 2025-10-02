@@ -1,0 +1,383 @@
+/* ===== Reset & Basics ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+}
+
+/* ===== Container ===== */
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ===== Header ===== */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: transparent;            /* default transparent */
+  color: #fff;
+  padding: 1rem 0;
+  z-index: 1000;
+  transition: background 0.3s ease;  /* smooth background change */
+}
+
+header.scrolled {
+  background: rgba(0, 64, 128, 0.7); /* semi-transparent on scroll */
+}
+
+header .container {
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  margin: 0;
+}
+
+/* ===== Navigation ===== */
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav ul li {
+  margin-left: 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #ffcc00;
+  border-bottom: 2px solid #ffcc00;
+  padding-bottom: 4px;
+}
+
+nav ul li a.active {
+  border-bottom: 2px solid #ff6600;
+  padding-bottom: 4px;
+}
+
+/* ===== Programs Dropdown ===== */
+/* Dropdown container */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown button */
+.dropbtn {
+  cursor: pointer;
+  font-weight: bold;
+  padding: 10px;
+}
+
+/* Dropdown menu */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  min-width: 180px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  z-index: 10;
+  flex-direction: column;
+  border-radius: 6px;
+}
+
+/* Show when active */
+.dropdown-content.show {
+  display: flex;
+}
+
+/* Dropdown links */
+.dropdown-content a {
+  padding: 12px 16px;
+  text-decoration: none;
+  color: #110f10;
+  display: block;
+  border-bottom: 1px solid #eee;
+  font-size: 1rem;
+}
+
+.dropdown-content a:last-child {
+  border-bottom: none;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+/* 📱 Mobile styles */
+@media (max-width: 768px) {
+  .dropdown {
+    width: 100%; /* take full width */
+  }
+
+  .dropbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 14px;
+    font-size: 1.1rem;
+  }
+
+  .dropdown-content {
+    position: static;   /* no floating */
+    width: 100%;        /* full width */
+    box-shadow: none;   /* remove desktop shadow */
+    border-radius: 0;
+    border-top: 1px solid #ddd;
+  }
+
+  .dropdown-content a {
+    padding: 14px;
+    font-size: 1.05rem;
+  }
+}
+
+
+/* ===== Hero Section (index.html only) ===== */
+.hero {
+  background: url('../assets/hero.jpg') no-repeat center center/cover;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  padding-top: 100px;  /* space for fixed header */
+  padding-bottom: 100px;
+}
+
+.hero-content h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+}
+
+.btn {
+  background: #ff6600;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+/* ===== Content Sections ===== */
+.about {
+  padding: 50px 20px;
+  background: #fff;
+}
+
+
+/* ===== Main Flex Support ===== */
+.main-content{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  max-width: 18rem;
+  height: auto;
+  margin-bottom: 0.8rem;
+}
+.main-para {
+  margin-top: 0.6rem;
+  width: 50%;
+  text-align: center;
+}
+
+/* ===== Team List ===== */
+.team {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.team h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.team-member {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.team-member .profile {
+  flex: 0 0 200px;
+  text-align: center;
+}
+
+.team-member .profile img.headshot {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 0.5rem;
+}
+
+.team-member .profile h3 {
+  margin: 0.5rem 0 0.25rem;
+}
+
+.team-member .profile .position {
+  font-style: italic;
+  color: #555;
+  margin: 0;
+}
+
+.team-member .profile-left .position {
+  font-style: italic;
+  color: #555;
+  margin: 0;
+}
+
+.team-member .bio {
+  flex: 1;
+}
+
+.team-member .bio p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.name-position-left{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.name-position-right{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: right;
+}
+
+.pronouns-style{
+  padding-left: 1%;
+  align-content: center;
+}
+
+
+/* Even members: reverse order */
+.team-member.even {
+  flex-direction: row-reverse;
+}
+
+.team-member.even .profile {
+  text-align: right;  /* aligns name and position to the right */
+}
+
+/* Responsive for mobile */
+@media (max-width: 700px) {
+  .team-member {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .team-member.even {
+    flex-direction: column;
+  }
+
+  .team-member .bio {
+    margin-top: 1rem;
+  }
+}
+
+
+/* ===== Footer ===== */
+footer {
+  background: #004080;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  margin-top: auto;
+}
+
+footer .upper {
+  display: inline-flex;
+  align-items: center;
+  color: #fff;
+  gap: 0.5rem;
+}
+
+footer .container {
+  display: block;         /* stop flexing */
+  text-align: center;     /* center content */
+}
+
+.email{
+  color: #fff;
+}
+
+footer .social {
+  margin-top: 0.2rem;
+  margin-bottom: 0.1rem; /* space above copyright */
+}
+
+footer .social a.instagram {
+  display: inline-flex;
+  align-items: center;
+  justify-items: center;
+  color: #fff;              /* matches footer text */
+  text-decoration: none;
+  font-weight: bold;
+  gap: 0.5rem;              /* space between icon and username */
+}
+
+.social{
+  display: inline-flex;
+  align-items: center;
+}
+
+footer .upper a.email:hover {
+  color: #ffcc00;         
+  transition: color 0.3s ease;
+}
+
+footer .social a.instagram:hover {
+  color: #ffcc00;         
+  transition: color 0.3s ease;
+}
+
+footer .social svg {
+  width: 24px;
+  height: 24px;
+}
+
+footer .container p.reserved {
+  font-size: 0.7rem;
+  margin-top: 0.5rem;
+}
